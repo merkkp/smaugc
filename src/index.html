@@ -3,7 +3,6 @@
 <head>
     <title>yacg</title>
     <link inline rel="stylesheet" type="text/css" href="static/css/yacg.css">
-    <script inline src="static/js/yacg.js"></script>
 </head>
 <body>
     <header>
@@ -11,13 +10,14 @@
     </header>
     <main>
         <section>
-            <input type="" name="">
-            <button></button>
-            <button></button>
+            <input id="cpfInput" type="text" minlength="14" maxlength="14" autofocus>
+            <button id="generateCpfButton">GERAR CPF</button>
+            <button id="validateCpfButton">VALIDAR CPF</button>
         </section>
         <section>
         </section>
     </main>
+    <script inline src="static/js/yacg.js"></script>
     <!-- livereload -->
     <script src="http://localhost:24567/livereload.js"></script>
 </body>

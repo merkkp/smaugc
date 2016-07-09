@@ -38,8 +38,8 @@ gulp.task('js', function(){
     gulp.src([
         js.src + '/**/*.js'
     ])
-    .pipe(concat('yacg.js'))
     .pipe(uglify({mangle: true}).on('error', gutil.log))
+    .pipe(concat('yacg.js'))
     .pipe(gulp.dest(js.target))
     .pipe(livereload());
 });
