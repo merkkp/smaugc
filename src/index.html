@@ -11,10 +11,12 @@
     <main>
         <section>
             <input id="cpfInput" type="text" minlength="14" maxlength="14" autofocus>
-            <button id="generateCpfButton">GERAR CPF</button>
-            <button id="validateCpfButton">VALIDAR CPF</button>
+            <button id="copyToClip" title="Copiar para área de trasnferência"><i>COPIAR PARA CLIPBOARD</i></button>
         </section>
         <section>
+            <button id="generateCpfButton">GERAR CPF</button>
+            <input id="withMask" type="checkbox" title="com pontuação"></button>
+            <button id="validateCpfButton">VALIDAR CPF</button>
         </section>
     </main>
     <script inline src="static/js/yacg.js"></script>

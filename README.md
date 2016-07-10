@@ -12,3 +12,8 @@ Pra compilar é só ter o npm e o gulp.
 
 Então é só copiar o arquivo em *public/html* para o webroot do seu servidor web.
 | Exemplo, no caso do apache geralmente é o *var/www*
+
+---
+refs
+
+[1](http://www.geradorcpf.com/algoritmo_do_cpf.htm)
