@@ -29,7 +29,7 @@ gulp.task('css', function(){
     ])
     .pipe(sass().on('error', sass.logError))
     .pipe(cleancss())
-    .pipe(concat('yacg.css'))
+    .pipe(concat('smaugc.css'))
     .pipe(gulp.dest(css.target))
     .pipe(livereload());
 });
@@ -39,7 +39,7 @@ gulp.task('js', function(){
         js.src + '/**/*.js'
     ])
     .pipe(uglify({mangle: true}).on('error', gutil.log))
-    .pipe(concat('yacg.js'))
+    .pipe(concat('smaugc.js'))
     .pipe(gulp.dest(js.target))
     .pipe(livereload());
 });
