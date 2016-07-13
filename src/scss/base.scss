@@ -1,0 +1,50 @@
+$font-stack:  Economica, sans-serif;
+$primary-color:  #333;
+
+body {
+  font: 100% $font-stack;
+    
+  header {
+    background: $primary-color;
+    // display: block;
+    margin: auto;
+    width: 80%;
+    height: 50%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+      // float: left;
+    }
+
+    img {
+      margin: auto;
+      display: block;
+    }
+  }
+
+  main {
+    width: 80%;
+    margin: auto;
+    display: block;
+
+    section.title {
+      h1 {
+        text-align: center;
+      }
+    
+    }
+
+    section.input-wrapper {
+      .input {
+
+      }
+
+      .input-btn {
+        
+      }
+    }
+
+    section.btn-wrapper {
+    }
+  }
+}

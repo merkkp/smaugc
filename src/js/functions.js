@@ -1,12 +1,4 @@
-var validateCpfButton = document.getElementById('validateCpfButton');
-var generateCpfButton = document.getElementById('generateCpfButton');
-var cpfInput = document.getElementById('cpfInput');
-var copyToClip = document.getElementById('copyToClip');
-var withMask = document.getElementById('withMask');
-
-function cpfMask() {
-    var cpf = this.value;
-    
+function cpfMask(cpf) {
     // STUDY THIS
     // removes everything that is not a number
     cpf = cpf.replace(/\D/g, "");
@@ -17,12 +9,10 @@ function cpfMask() {
     // insert a dash between the tenth and the elenventh digits
     cpf = cpf.replace(/(\d{3})(\d)/, "$1-$2");
 
-    this.value = cpf;
+    return cpf;
 }
 
-function validateCpf() {
-    var cpf = this.value;
-
+function validateCpf(cpf) {
     cpf = cpf.replace(/\D/g, "");
 
     if (cpf.length != 11)
@@ -35,8 +25,9 @@ function validateCpf() {
         sum += parseInt(cpf.charAt(i)) * (10 - i);
     
     digit = 11 - (sum % 11);
-    if (digit == 10 || digit == 11)
+    if (digit >= 10)
         digit = 0;
+    
     if (digit != parseInt(cpf.charAt(9)))
         return false;
 
@@ -46,8 +37,9 @@ function validateCpf() {
         sum += parseInt(cpf.charAt(i)) * (11 - i);
 
     digit = 11 - (sum % 11);
-    if (digit == 10 || digit == 11)
+    if (digit >= 10)
         digit = 0;
+
     if (digit != parseInt(cpf.charAt(10)))
         return false;
 
@@ -55,6 +47,7 @@ function validateCpf() {
 }
 
 function generateCpf() {
+    // generate random string of 9 numbers
     var cpf = String(Math.random()).substr(2, 9);
 
     // TODO
@@ -63,7 +56,7 @@ function generateCpf() {
         sum += parseInt(cpf.charAt(i)) * (10 - i);
 
     digit = 11 - (sum % 11);
-    if (digit == 10 || digit == 11)
+    if (digit >= 10)
         digit = 0;
 
     cpf += digit;
@@ -73,53 +66,10 @@ function generateCpf() {
         sum += parseInt(cpf.charAt(i)) * (11 - i);
 
     digit = 11 - (sum % 11);
-    if (digit == 10 || digit == 11)
+    if (digit >= 10)
         digit = 0;
 
     cpf += digit;
 
     return cpf;
 }
-
-cpfInput.onkeypress = cpfMask;
-
-cpfInput.onpaste = function(pasteEvent) {
-    var pasteData = pasteEvent.clipboardData.getData('Text');
-    if (pasteData.length != 11) {
-        this.value = '';
-        return false;
-    }
-
-    this.value = pasteData;
-
-    if (withMask.checked)
-        cpfMask.call(this);
-};
-
-validateCpfButton.onclick = function() {
-    if (cpfInput.value === '')
-        return false;
-
-    if (validateCpf.call(cpfInput)) {
-        alert("valid");
-        return true;
-    }
-
-    alert('invalid');
-    return false;
-};
-
-generateCpfButton.onclick = function() {
-    var cpf = generateCpf();
-    
-    cpfInput.value = cpf;
-
-    if (withMask.checked) {
-        cpfMask.call(cpfInput);
-    }
-};
-
-copyToClip.onclick = function() {
-    cpfInput.select();
-    document.execCommand('copy');
-};

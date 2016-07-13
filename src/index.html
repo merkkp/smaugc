@@ -1,28 +1,32 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 <html>
 <head>
-    <title>smauC</title>
-    <link inline rel="stylesheet" type="text/css" href="static/css/yacg.css">
+    <title>smaugC</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=
+1.0, maximum-scale=1.0"/>
+    <link inline rel="stylesheet" type="text/css" href="static/css/smaugc.css">
 </head>
 <body>
     <header>
-        <img src="">
+        <img class="logo" src="https://placehold.it/100x50">
     </header>
     <main>
-        <section>
+        <section class="title">
             <h1>smaugC</h1>
         </section>
-        <section>
-            <input id="cpfInput" type="text" minlength="14" maxlength="14" autofocus>
-            <button id="copyToClip" title="Copiar para área de trasnferência"><i>COPIAR PARA CLIPBOARD</i></button>
+        <section class="input-wrapper">
+            <input class="input" id="cpfInput" type="text" minlength="11" maxlength="14" autofocus>
+            <button  class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><i>COPIAR PARA CLIPBOARD</i></button>
         </section>
-        <section>
+        <section class="btn-wrapper">
             <button id="generateCpfButton">GERAR CPF</button>
             <input id="withMask" type="checkbox" title="com pontuação"></button>
             <button id="validateCpfButton">VALIDAR CPF</button>
         </section>
     </main>
-    <script inline src="static/js/yacg.js"></script>
+    <script inline src="static/js/smaugc.js"></script>
     <!-- livereload -->
     <script src="http://localhost:24567/livereload.js"></script>
 </body>

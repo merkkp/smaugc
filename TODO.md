@@ -2,3 +2,4 @@
 - [ ] "            "    "        "    "     "    "   ", trocar o if duplo por um if só, o de resto < 2 
 - [ ] dar a possibilidade de escolher de qual região é o cpf
 - [ ] estilizar
+- [ ] paste function

@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
     concat = require('gulp-concat'),
     inline = require('gulp-inline-source'),
     livereload = require('gulp-livereload'),
@@ -9,12 +9,12 @@ var gulp = require('gulp');
     minifyhtml = require('gulp-minify-html');
 
 css = {
-    'src': 'src/static/scss',
+    'src': 'src/scss',
     'target': 'public/static/css'
 };
 
 js = {
-    'src': 'src/static/js',
+    'src': 'src/js',
     'target': 'public/static/js'
 };
 
