@@ -6,16 +6,24 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util'),
     cleancss = require('gulp-clean-css'),
-    minifyhtml = require('gulp-minify-html');
+    minifyhtml = require('gulp-minify-html'),
+    flatten = require('gulp-flatten');
 
-css = {
-    'src': 'src/scss',
-    'target': 'public/static/css'
-};
+static = {
+    js : {
+        'src': 'src/js',
+        'target': 'public/static/js'
+    },
 
-js = {
-    'src': 'src/js',
-    'target': 'public/static/js'
+    css : {
+        'src': 'src/scss',
+        'target': 'public/static/css'
+    },
+
+    fonts : {
+        'src': 'src/fonts',
+        'target': 'public/static/fonts'
+    }
 };
 
 html = {
@@ -25,22 +33,23 @@ html = {
 
 gulp.task('css', function(){
     gulp.src([
-        css.src + '/**/*.scss'
+        static.css.src + '/**/*.scss'
     ])
     .pipe(sass().on('error', sass.logError))
     .pipe(cleancss())
     .pipe(concat('smaugc.css'))
-    .pipe(gulp.dest(css.target))
+    .pipe(gulp.dest(static.css.target))
     .pipe(livereload());
+
 });
 
 gulp.task('js', function(){
     gulp.src([
-        js.src + '/**/*.js'
+        static.js.src + '/**/*.js'
     ])
     .pipe(uglify({mangle: true}).on('error', gutil.log))
     .pipe(concat('smaugc.js'))
-    .pipe(gulp.dest(js.target))
+    .pipe(gulp.dest(static.js.target))
     .pipe(livereload());
 });
 
@@ -53,8 +62,16 @@ gulp.task('html', function(){
     .pipe(livereload());
 });
 
+gulp.task('fonts', function(){
+    gulp.src([
+        static.fonts.src + '/**/*.{eot,svg,ttf,woff}'
+    ])
+    .pipe(flatten())
+    .pipe(gulp.dest(static.fonts.target));
+});
 
-gulp.task('default', ['css', 'js', 'html']);
+
+gulp.task('default', ['css', 'js', 'html', 'fonts']);
 
 gulp.task('compile', function(){
     gulp.src('public/index.html')
@@ -66,7 +83,8 @@ gulp.task('compile', function(){
 
 gulp.task('watch', function(){
     livereload.listen({"port": 24567});
-    gulp.watch(css.src + '/**/*.scss', ['css']);
-    gulp.watch(js.src + '/**/*.js', ['js']);
+    gulp.watch(static.css.src + '/**/*.scss', ['css']);
+    gulp.watch(static.js.src + '/**/*.js', ['js']);
+    gulp.watch(static.fonts.src + '/**/*.{eot,svg,ttf,woff}');
     gulp.watch(html.src + '/index.html', ['html']);
 });

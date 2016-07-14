@@ -3,3 +3,4 @@
 - [ ] dar a possibilidade de escolher de qual região é o cpf
 - [ ] estilizar
 - [ ] paste function
+- [ ] change icons css to svg

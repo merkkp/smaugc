@@ -1,50 +1,49 @@
-$font-stack:  Economica, sans-serif;
+@import 'reset';
+@import 'classes';
+@import url(https://fonts.googleapis.com/css?family=Economica);
+
+$font-stack:  'Economica', sans-serif;
 $primary-color:  #333;
 
-body {
+body, input, button, select, option, textarea {
   font: 100% $font-stack;
-    
-  header {
-    background: $primary-color;
+}
+
+body {
+  header, main {
     // display: block;
     margin: auto;
-    width: 80%;
-    height: 50%;
+    width: 100%;
 
-    @media (max-width: 500px) {
-      width: 100%;
-      // float: left;
+    @media (min-width: 600px) {
+      width: 80%;
     }
 
+    @media (min-width: 1000px) {
+      width: 60%;
+    }
+
+  }
+
+  header {
+    background: $primary-color;
+
     img {
-      margin: auto;
+
       display: block;
+      margin: auto;
     }
   }
 
   main {
-    width: 80%;
-    margin: auto;
-    display: block;
-
-    section.title {
-      h1 {
+    section {
+      &.title, &.input-wrapper, &.btn-wrapper {
         text-align: center;
       }
-    
-    }
 
-    section.input-wrapper {
-      .input {
-
+      &.title h1 {
+        font-size: 400%;
       }
-
-      .input-btn {
-        
-      }
-    }
-
-    section.btn-wrapper {
     }
   }
 }

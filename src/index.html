@@ -6,6 +6,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, minimum-scale=
 1.0, maximum-scale=1.0"/>
+    <!-- <link inline href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet"> -->
     <link inline rel="stylesheet" type="text/css" href="static/css/smaugc.css">
 </head>
 <body>
@@ -15,15 +16,16 @@
     <main>
         <section class="title">
             <h1>smaugC</h1>
+            <p>Só Mais Um Gerador de CPF</p>
         </section>
         <section class="input-wrapper">
             <input class="input" id="cpfInput" type="text" minlength="11" maxlength="14" autofocus>
-            <button  class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><i>COPIAR PARA CLIPBOARD</i></button>
+            <button  class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><span class="icon-copy"></span></button>
         </section>
         <section class="btn-wrapper">
-            <button id="generateCpfButton">GERAR CPF</button>
-            <input id="withMask" type="checkbox" title="com pontuação"></button>
-            <button id="validateCpfButton">VALIDAR CPF</button>
+            <button class="btn" id="generateCpfButton">GERAR CPF</button>
+            <input class="btn" id="withMask" type="checkbox" title="com pontuação"></button>
+            <button class="btn" id="validateCpfButton">VALIDAR CPF</button>
         </section>
     </main>
     <script inline src="static/js/smaugc.js"></script>
