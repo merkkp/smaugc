@@ -2,16 +2,18 @@
 <html lang="pt-BR">
 <html>
 <head>
-    <title>smaugC</title>
+    <title>smaugC - Gerador de CPF</title>
     <meta charset="utf-8"/>
+    <meta name="robots" content="index, follow">
+    <meta content="Só mais um gerador de CPF" name="description">
     <meta name="viewport" content="width=device-width, minimum-scale=
 1.0, maximum-scale=1.0"/>
-    <!-- <link inline href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
     <link inline rel="stylesheet" type="text/css" href="static/css/smaugc.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="https://placehold.it/100x50">
+        <img inline class="logo" src="static/imgs/smaug.png">
     </header>
     <main>
         <section class="title">
@@ -21,7 +23,7 @@
         <section class="input-wrapper">
             <!-- <input class="checkbox" id="withMask" type="checkbox" title="com pontuação"></button> -->
             <input class="input" id="cpfInput" type="text" minlength="11" maxlength="11" autofocus>
-            <button class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><span class="icon-copy"></span></button>
+            <button class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><img inline src="static/imgs/copy_icon.svg"/></button>
         </section>
         <section class="btn-wrapper">
             <button class="btn" id="generateCpfButton">GERAR CPF</button>
@@ -29,10 +31,12 @@
         </section>
         <section class="about">
             <p>
-                Segundo a <a href="https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas" target="_blank">wikipedia</a>: O cadastro de pessoas físicas (CPF ou CPF-MF) é o registro mantido pela Receita Federal do Brasil no qual podem se inscrever, uma única vez, quaisquer pessoas naturais, independentemente de idade ou nacionalidade, inclusive falecidas.[2] [3] Cada inscrito é unicamente identificado por um número de inscrição no CPF de 11 dígitos decimais. Esse número jamais muda senão por decisão judicial ou administrativa.
+                Segundo a <a href="https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas" target="_blank">wikipedia</a>: O cadastro de pessoas físicas (CPF ou CPF-MF) é o registro mantido pela Receita Federal do Brasil no qual podem se inscrever, uma única vez, quaisquer pessoas naturais, independentemente de idade ou nacionalidade, inclusive falecidas. Cada inscrito é unicamente identificado por um número de inscrição no CPF de 11 dígitos decimais. Esse número jamais muda senão por decisão judicial ou administrativa.
+                <br>
+                O algoritmo que define um CPF válido é relativamente simples, eu tive como base esse <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm" target="_blank">aqui</a>
+                <br>
+                (Nota: Um CPF válido é <b>diferente</b> de um CPF real, para isso você deve consultar o <a href="https://www.receita.fazenda.gov.br/Aplicacoes/SSL/ATCTA/CPF/ConsultaPublica.asp" target="_blank">site</a> da receita.)
             </p>
-            <p>
-                O algoritmo do CPF é relativamente simples, eu tive como base esse <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm" target="_blank">aqui</a>
         </section>
         <section class="github">
             <p>Xingue-me no <a href="https://github.com/merkkp/smaugc" target="_blank">github</a></p>
