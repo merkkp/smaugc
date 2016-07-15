@@ -1,16 +1,16 @@
-function cpfMask(cpf) {
-    // STUDY THIS
-    // removes everything that is not a number
-    cpf = cpf.replace(/\D/g, "");
-    // insert a dot between the third and the fourth digits
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-    // insert a dot between the seventh and the eight digits
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
-    // insert a dash between the tenth and the elenventh digits
-    cpf = cpf.replace(/(\d{3})(\d)/, "$1-$2");
+// function cpfMask(cpf) {
+//     // STUDY THIS
+//     // removes everything that is not a number
+//     cpf = cpf.replace(/\D/g, "");
+//     // insert a dot between the third and the fourth digits
+//     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//     // insert a dot between the seventh and the eight digits
+//     cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+//     // insert a dash between the tenth and the elenventh digits
+//     cpf = cpf.replace(/(\d{3})(\d)/, "$1-$2");
 
-    return cpf;
-}
+//     return cpf;
+// }
 
 function validateCpf(cpf) {
     cpf = cpf.replace(/\D/g, "");
@@ -72,4 +72,23 @@ function generateCpf() {
     cpf += digit;
 
     return cpf;
+}
+
+function hasClass(element, className) {
+    var elementClasses = element.className;
+
+    if (elementClasses.indexOf(className) >= 0)
+        return true;
+
+    return false;
+}
+
+function removeClass(element, className) {
+    if (hasClass(element, className))
+        element.className = element.className.replace(" " + className, "");
+}
+
+function addClass(element, className) {
+    if (!hasClass(element, className))
+        element.className += " " + className;
 }

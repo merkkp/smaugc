@@ -16,16 +16,26 @@
     <main>
         <section class="title">
             <h1>smaugC</h1>
-            <p>Só Mais Um Gerador de CPF</p>
+            <h2><span class="cap">S</span>ó <span class="cap">M</span>ais <span class="cap">U</span>m <span class="cap">G</span>erador de <span class="cap">C</span>PF</h2>
         </section>
         <section class="input-wrapper">
-            <input class="input" id="cpfInput" type="text" minlength="11" maxlength="14" autofocus>
-            <button  class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><span class="icon-copy"></span></button>
+            <!-- <input class="checkbox" id="withMask" type="checkbox" title="com pontuação"></button> -->
+            <input class="input" id="cpfInput" type="text" minlength="11" maxlength="11" autofocus>
+            <button class="input-btn" id="copyToClip" title="Copiar para área de trasnferência"><span class="icon-copy"></span></button>
         </section>
         <section class="btn-wrapper">
             <button class="btn" id="generateCpfButton">GERAR CPF</button>
-            <input class="btn" id="withMask" type="checkbox" title="com pontuação"></button>
             <button class="btn" id="validateCpfButton">VALIDAR CPF</button>
+        </section>
+        <section class="about">
+            <p>
+                Segundo a <a href="https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas" target="_blank">wikipedia</a>: O cadastro de pessoas físicas (CPF ou CPF-MF) é o registro mantido pela Receita Federal do Brasil no qual podem se inscrever, uma única vez, quaisquer pessoas naturais, independentemente de idade ou nacionalidade, inclusive falecidas.[2] [3] Cada inscrito é unicamente identificado por um número de inscrição no CPF de 11 dígitos decimais. Esse número jamais muda senão por decisão judicial ou administrativa.
+            </p>
+            <p>
+                O algoritmo do CPF é relativamente simples, eu tive como base esse <a href="http://www.geradorcpf.com/algoritmo_do_cpf.htm" target="_blank">aqui</a>
+        </section>
+        <section class="github">
+            <p>Xingue-me no <a href="https://github.com/merkkp/smaugc" target="_blank">github</a></p>
         </section>
     </main>
     <script inline src="static/js/smaugc.js"></script>

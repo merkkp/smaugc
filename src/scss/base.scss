@@ -1,12 +1,26 @@
+$font-stack:  'Economica', sans-serif;
+
 @import 'reset';
 @import 'classes';
-@import url(https://fonts.googleapis.com/css?family=Economica);
+@import 'economica_font';
+@import 'icon_copy_font';
 
-$font-stack:  'Economica', sans-serif;
-$primary-color:  #333;
 
-body, input, button, select, option, textarea {
+body, input, button, select, option, textarea, h1, h1 {
   font: 100% $font-stack;
+  outline: none;
+}
+
+section {
+  margin: 2%;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  border-bottom: 1px solid black;
 }
 
 body {
@@ -26,10 +40,13 @@ body {
   }
 
   header {
-    background: $primary-color;
+    border-bottom: 2px transparent solid;
+    transition: 0.5s ease;
+    &:hover {
+      border-bottom: 2px black solid;
+    }
 
     img {
-
       display: block;
       margin: auto;
     }
@@ -39,11 +56,87 @@ body {
     section {
       &.title, &.input-wrapper, &.btn-wrapper {
         text-align: center;
+        margin: 1%;
       }
 
       &.title h1 {
-        font-size: 400%;
+        text-decoration: bold;
+        font-size: 600%;
+        margin-bottom: 1%;
+
       }
+
+      &.title h2 {
+        text-decoration: none;
+        font-size: 150%;
+        margin-bottom: 3%;
+      }
+
+      &.input-wrapper {
+        .input {
+          width: 35%;
+          text-align: center;
+          font-size: 160%;
+
+        }
+        .input-btn {
+          border: 1px solid black;
+          background: none;
+          margin: 2%;
+          transition: 0.3s ease;
+
+          &:hover {
+            background: black;
+            color: white;
+          }
+
+        }
+        .checkbox {
+          border: 1px solid black;
+          background: none;
+
+          .checkbox {
+
+            &:checked {
+              border: 2px solid blue;
+              outline: 2px solid blue;
+            }
+          }
+        }
+      }
+
+      &.btn-wrapper {
+        margin-bottom: 5%;
+      }
+      &.about, &.github {
+        font-size: 120%;
+        text-align: center;
+      }
+
+      &.github {
+        a {
+          color: #454545;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+
+      &.about {
+        display: none;
+
+        @media (min-width: 600px) {
+          display: inline;
+        }
+
+        @media (min-width: 1000px) {
+          display: inline;
+        }
+      }
+
+      
     }
+
   }
 }

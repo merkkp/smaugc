@@ -5,7 +5,9 @@ var copyToClip = document.getElementById('copyToClip');
 var withMask = document.getElementById('withMask');
 
 cpfInput.onkeydown = function() {
-    this.value = cpfMask(this.value);
+    removeClass(cpfInput, 'valid');
+    removeClass(cpfInput, 'invalid');
+    // this.value = cpfMask(this.value);
 };
 
 // cpfInput.onpaste = function(pasteEvent) {
@@ -19,24 +21,30 @@ cpfInput.onkeydown = function() {
 // };
 
 validateCpfButton.onclick = function() {
+    removeClass(cpfInput, 'valid');
+    removeClass(cpfInput, 'invalid');
+
     if (cpfInput.value === '')
         return false;
 
     if (validateCpf(cpfInput.value)) {
-        alert("valid");
+        addClass(cpfInput, 'valid');
         return true;
     }
 
-    alert('invalid');
+    addClass(cpfInput, 'invalid');
     return false;
 };
 
 generateCpfButton.onclick = function() {
     var cpf = generateCpf();
 
-    if (withMask.checked)
-        cpfInput.value = cpfMask(cpf);
-    else
+    removeClass(cpfInput, 'valid');
+    removeClass(cpfInput, 'invalid');
+
+    // if (withMask.checked)
+    //     cpfInput.value = cpfMask(cpf);
+    // else
         cpfInput.value = cpf;
 };
 

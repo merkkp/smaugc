@@ -1,6 +1,9 @@
-- [ ] Refatorar função de verificação e geração do cpf, deixar mais legível
-- [ ] "            "    "        "    "     "    "   ", trocar o if duplo por um if só, o de resto < 2 
 - [ ] dar a possibilidade de escolher de qual região é o cpf
-- [ ] estilizar
 - [ ] paste function
 - [ ] change icons css to svg
+- [ ] estilizar checkbox
+- [ ] titulo checkbox e botão de copiar
+- [ ] concertar compile
+- [ ] adicionar testes
+- [ ] deployar pro gh com travis
+- [ ] icone top bar

@@ -33,7 +33,7 @@ html = {
 
 gulp.task('css', function(){
     gulp.src([
-        static.css.src + '/**/*.scss'
+        static.css.src + '/base.scss'
     ])
     .pipe(sass().on('error', sass.logError))
     .pipe(cleancss())
