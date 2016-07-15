@@ -4,7 +4,7 @@
   "description": "(Mais um) Gerador de CPF.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified\" && exit 0",
     "start": "./node_modules/http-server/bin/http-server public/"
   },
   "repository": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/merkkp/yacg#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.11",
     "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.3.0",
