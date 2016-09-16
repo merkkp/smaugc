@@ -1,8 +1,0 @@
-- [ ] dar a possibilidade de escolher de qual região é o cpf
-- [ ] paste function
-- [ ] estilizar checkbox
-- [ ] titulo checkbox e botão de copiar
-- [ ] adicionar testes
-- [ ] deployar pro gh com travis
-- [ ] animar input-btn
-- [ ] consertar background + letra
