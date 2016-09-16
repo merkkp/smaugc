@@ -38,7 +38,7 @@ html = {
 };
 
 gulp.task('css', function(){
-    gulp.src([
+    return gulp.src([
         static.css.src + '/base.scss'
     ])
     .pipe(sass().on('error', sass.logError))
@@ -50,7 +50,7 @@ gulp.task('css', function(){
 });
 
 gulp.task('js', function(){
-    gulp.src([
+    return gulp.src([
         static.js.src + '/**/*.js'
     ])
     .pipe(uglify({mangle: true}).on('error', gutil.log))
@@ -60,7 +60,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('html', function(){
-    gulp.src([
+    return gulp.src([
         html.src + '/index.html'
     ])
     .pipe(minifyhtml())
@@ -69,14 +69,14 @@ gulp.task('html', function(){
 });
 
 gulp.task('imgs', function(){
-    gulp.src([static.imgs.src + '/**/*.{png,jpg,svg}'])
+    return gulp.src([static.imgs.src + '/**/*.{png,jpg,svg}'])
     .pipe(flatten())
     .pipe(gulp.dest(static.imgs.target))
     .pipe(livereload());
 });
 
 gulp.task('clean', function(){
-    gulp.src([
+    return gulp.src([
         'public',
         'dist'
     ], {read: false})
@@ -85,13 +85,8 @@ gulp.task('clean', function(){
 
 gulp.task('default', ['css', 'js', 'html', 'imgs']);
 
-gulp.task('compile', function(){
-    gulp.src('public/index.html')
-    // .pipe(inline_base64({
-    //     baseDir: html.target,
-    //     maxSize: 14 * 1024,
-    //     debug: true
-    // }))
+gulp.task('compile',['clean', 'default'], function(){
+    return gulp.src('public/index.html')
     .pipe(inline({
         compress: false
     }))
