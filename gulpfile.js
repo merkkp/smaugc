@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     cleancss = require('gulp-clean-css'),
     minifyhtml = require('gulp-minify-html'),
     flatten = require('gulp-flatten'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    ghpages = require('gulp-gh-pages');
 
 static = {
     js : {
@@ -99,4 +100,8 @@ gulp.task('watch', function(){
     gulp.watch(static.js.src + '/**/*.js', ['js']);
     gulp.watch(html.src + '/index.html', ['html']);
     gulp.watch(static.imgs.src + '/**/*.{png,jpg,svg}');
+});
+
+gulp.task('ghdeploy', function(){
+    return gulp.src('dist/index.html').pipe(ghpages());
 });
