@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "start": "./node_modules/http-server/bin/http-server public/"
+    "start": "./node_modules/http-server/bin/http-server public/",
+    "heroku-postbuild": "gulp"
   },
   "repository": {
     "type": "git",
