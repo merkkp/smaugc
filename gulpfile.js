@@ -84,15 +84,17 @@ gulp.task('clean', function(){
     .pipe(clean());
 });
 
-gulp.task('default', ['css', 'js', 'html', 'imgs']);
+gulp.task('default', gulp.series('css', 'js', 'html', 'imgs'));
+// gulp.task('default', ['css', 'js', 'html', 'imgs']);
 
-gulp.task('compile',['clean', 'default'], function(){
+// gulp.task('compile',['clean', 'default'], function(){
+gulp.task('compile', gulp.series('clean', 'default', function(){
     return gulp.src('public/index.html')
     .pipe(inline({
         compress: false
     }))
     .pipe(gulp.dest('dist'));
-});
+}));
 
 gulp.task('watch', function(){
     livereload.listen({"port": 24567});
